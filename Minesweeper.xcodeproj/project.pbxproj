@@ -8,18 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		8FB558DE2533D02B0034EF30 /* MinesweeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB558DD2533D02B0034EF30 /* MinesweeperApp.swift */; };
-		8FB558E02533D02B0034EF30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB558DF2533D02B0034EF30 /* ContentView.swift */; };
 		8FB558E22533D02E0034EF30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB558E12533D02E0034EF30 /* Assets.xcassets */; };
 		8FB558E52533D02E0034EF30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB558E42533D02E0034EF30 /* Preview Assets.xcassets */; };
+		8FB558EF2533D1FB0034EF30 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB558EE2533D1FB0034EF30 /* GameSettings.swift */; };
+		8FB558F3253502EB0034EF30 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB558F2253502EB0034EF30 /* Game.swift */; };
+		8FB558F6253505240034EF30 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB558F5253505240034EF30 /* Cell.swift */; };
+		8FB558F92535054B0034EF30 /* Cell+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB558F82535054B0034EF30 /* Cell+Status.swift */; };
+		8FB558FD253506F60034EF30 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB558FC253506F60034EF30 /* CellView.swift */; };
+		8FB55900253509D00034EF30 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB558FF253509D00034EF30 /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8FB558DA2533D02B0034EF30 /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB558DD2533D02B0034EF30 /* MinesweeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesweeperApp.swift; sourceTree = "<group>"; };
-		8FB558DF2533D02B0034EF30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8FB558E12533D02E0034EF30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FB558E42533D02E0034EF30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8FB558E62533D02E0034EF30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FB558EE2533D1FB0034EF30 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		8FB558F2253502EB0034EF30 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		8FB558F5253505240034EF30 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		8FB558F82535054B0034EF30 /* Cell+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Status.swift"; sourceTree = "<group>"; };
+		8FB558FC253506F60034EF30 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		8FB558FF253509D00034EF30 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +62,9 @@
 		8FB558DC2533D02B0034EF30 /* Minesweeper */ = {
 			isa = PBXGroup;
 			children = (
+				8FB558FB253506E30034EF30 /* View */,
+				8FB558ED2533D1C90034EF30 /* Model */,
 				8FB558DD2533D02B0034EF30 /* MinesweeperApp.swift */,
-				8FB558DF2533D02B0034EF30 /* ContentView.swift */,
 				8FB558E12533D02E0034EF30 /* Assets.xcassets */,
 				8FB558E62533D02E0034EF30 /* Info.plist */,
 				8FB558E32533D02E0034EF30 /* Preview Content */,
@@ -67,6 +78,26 @@
 				8FB558E42533D02E0034EF30 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8FB558ED2533D1C90034EF30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FB558EE2533D1FB0034EF30 /* GameSettings.swift */,
+				8FB558F2253502EB0034EF30 /* Game.swift */,
+				8FB558F5253505240034EF30 /* Cell.swift */,
+				8FB558F82535054B0034EF30 /* Cell+Status.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FB558FB253506E30034EF30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8FB558FC253506F60034EF30 /* CellView.swift */,
+				8FB558FF253509D00034EF30 /* BoardView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB558E02533D02B0034EF30 /* ContentView.swift in Sources */,
+				8FB558F92535054B0034EF30 /* Cell+Status.swift in Sources */,
 				8FB558DE2533D02B0034EF30 /* MinesweeperApp.swift in Sources */,
+				8FB558F6253505240034EF30 /* Cell.swift in Sources */,
+				8FB558EF2533D1FB0034EF30 /* GameSettings.swift in Sources */,
+				8FB55900253509D00034EF30 /* BoardView.swift in Sources */,
+				8FB558F3253502EB0034EF30 /* Game.swift in Sources */,
+				8FB558FD253506F60034EF30 /* CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

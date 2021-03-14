@@ -22,6 +22,9 @@ struct CellView: View {
             .frame(width: game.settings.squareSize,
                    height: game.settings.squareSize,
                    alignment: .center)
+            .onTapGesture(count: 2, perform: {
+                game.toggleFlag(on: cell)
+            })
             .onTapGesture {
                 game.click(on: cell)
             }

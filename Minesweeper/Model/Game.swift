@@ -14,20 +14,47 @@ class Game: ObservableObject {
     /// The game board
     @Published var board: [[Cell]]
 
-    @Published var didLose: Bool = false
+    @Published var showResult: Bool = false
+    @Published var isWon: Bool = false;
 
     init(from settings: GameSettings) {
         self.settings = settings
         board = Self.generateBoard(from: settings)
     }
 
+    func isPlayerWon() -> Bool{
+        for row in 0..<settings.numberOfRows {
+            for col in 0..<settings.numberOfColumns{
+                //If board contains normal cell, it means game is still going on.
+                if(board[row][col].status == .normal){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     func click(on cell: Cell) {
+
+        //We have to skip the process, if cell was already exposed.
+        if case Cell.Status.exposed( _ ) = cell.status {
+          return
+        }
+
+        if (cell.isFlagged){//We have to skip the process, if cell was flagged.
+            return;
+        }
         // Check we didn't click on a bomb
         if cell.status == .bomb {
             cell.isOpened = true
-            didLose = true
+            showResult = true
+            isWon = false;
         } else {
             reveal(for: cell)
+        }
+        if(isPlayerWon()){
+            showResult = true
+            isWon = true
         }
 
         self.objectWillChange.send()
@@ -39,13 +66,18 @@ class Game: ObservableObject {
         }
 
         cell.isFlagged = !cell.isFlagged
+        if(isPlayerWon()){
+            showResult = true
+            isWon = true
+        }
 
         self.objectWillChange.send()
     }
 
     func reset() {
         board = Self.generateBoard(from: settings)
-        didLose = false
+        showResult = false
+        isWon = false
     }
 
     // MARK: - Private Functions
